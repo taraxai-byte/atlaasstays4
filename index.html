@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ATLAASSTAYS — AI Travel Booking</title>
 
-  <!-- FIXED: THE EXACT AND CORRECT TRAVELPAYOUTS DRIVE SCRIPT -->
+  <!-- FIXED TRAVELPAYOUTS DRIVE SCRIPT -->
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
     (function () {
         var script = document.createElement("script");
@@ -17,29 +17,22 @@
   </script>
 
   <style>
-    /* Clean Modern UI Layout */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     body { background-color: #0b132b; color: #ffffff; line-height: 1.6; }
     .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
     header { text-align: center; padding: 40px 0; border-bottom: 1px solid #1c2541; }
     .logo { font-size: 32px; font-weight: 800; letter-spacing: 3px; color: #4cc9f0; }
     .tagline { font-size: 12px; letter-spacing: 2px; color: #6c757d; margin-top: 5px; text-transform: uppercase; }
-    
-    /* Interactive AI Chat Interface */
     .ai-container { background: #1c2541; max-width: 700px; margin: 50px auto; border-radius: 16px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #3a506b; }
     .chat-box { background: #0b132b; height: 350px; border-radius: 12px; padding: 20px; overflow-y: auto; margin-bottom: 20px; border: 1px solid #3a506b; font-size: 15px; display: flex; flex-direction: column; }
     .message { margin-bottom: 15px; padding: 12px 16px; border-radius: 8px; max-width: 85%; word-wrap: break-word; }
     .ai-msg { background: #1f3a60; color: #4cc9f0; align-self: flex-start; }
     .user-msg { background: #4cc9f0; color: #0b132b; align-self: flex-end; font-weight: 600; text-align: left; }
-    
-    /* Input Form Controls */
     .input-area { display: flex; gap: 10px; }
     .input-area input { flex: 1; padding: 15px; border-radius: 8px; border: 1px solid #3a506b; background: #0b132b; color: #fff; font-size: 16px; outline: none; }
     .input-area input:focus { border-color: #4cc9f0; }
     .input-area button { background: #4cc9f0; color: #0b132b; border: none; padding: 0 25px; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.3s; }
     .input-area button:hover { background: #3a506b; color: #fff; }
-    
-    /* Action Button for Redirect */
     .hotel-link-btn { background: #10b981; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; display: inline-block; font-weight: bold; margin-top: 10px; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); transition: 0.3s; text-align: center; }
     .hotel-link-btn:hover { transform: translateY(-2px); background: #059669; }
     footer { text-align: center; padding: 30px 0; color: #6c757d; font-size: 14px; margin-top: 20px; }
@@ -97,7 +90,6 @@
       chatBox.scrollTop = chatBox.scrollHeight;
 
       setTimeout(function() {
-        // Direct, safe integration linking to Booking.com results page via Travelpayouts tracking parameters
         const affiliateLink = "https://booking.com" + encodeURIComponent(destination);
 
         chatBox.innerHTML += 
