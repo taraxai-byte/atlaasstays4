@@ -95,27 +95,26 @@
       if (destination === "") return;
 
       // 1. Render user message
-      chatBox.innerHTML += `<div class="message user-msg">I want to travel to ${destination}</div>`;
+      chatBox.innerHTML += '<div class="message user-msg">I want to travel to ' + destination + '</div>';
       inputField.value = "";
       chatBox.scrollTop = chatBox.scrollHeight;
 
-      // 2. Automated Smart Response System
-      setTimeout(() => {
-        // Direct integration with Travelpayouts Link and Partner ID: 579177
-        const affiliateLink = `https://travelpayouts.com{encodeURIComponent(destination)}`;
+      // 2. Automated Smart Response System with String Concatenation Fix
+      setTimeout(function() {
+        // Safe string building method - NO backticks error
+        const affiliateLink = "https://travelpayouts.com" + encodeURIComponent(destination);
 
-        chatBox.innerHTML += `
-          <div class="message ai-msg">
-            <strong>ATLAAS AI:</strong> Custom 3-day itinerary successfully generated for <strong>${destination}</strong>:<br><br>
-            • <strong>Day 1:</strong> Airport arrival, hotel check-in, and evening leisure exploration.<br>
-            • <strong>Day 2:</strong> Main landmark sightseeing, historic district tours, and local experiences.<br>
-            • <strong>Day 3:</strong> Premium dining experience and departure preparations.<br><br>
-            <em>Inventory Access:</em> Click the button below to view live flight deals and hotel rates for ${destination}:<br>
-            <a href="${affiliateLink}" target="_blank" class="hotel-link-btn">
-              🏨 Explore Hotels & Flights in ${destination}
-            </a>
-          </div>
-        `;
+        chatBox.innerHTML += 
+          '<div class="message ai-msg">' +
+            '<strong>ATLAAS AI:</strong> Custom 3-day itinerary successfully generated for <strong>' + destination + '</strong>:<br><br>' +
+            '• <strong>Day 1:</strong> Airport arrival, hotel check-in, and evening leisure exploration.<br>' +
+            '• <strong>Day 2:</strong> Main landmark sightseeing, historic district tours, and local experiences.<br>' +
+            '• <strong>Day 3:</strong> Premium dining experience and departure preparations.<br><br>' +
+            '<em>Inventory Access:</em> Click the button below to view live flight deals and hotel rates for ' + destination + ':<br>' +
+            '<a href="' + affiliateLink + '" target="_blank" class="hotel-link-btn">' +
+              '🏨 Explore Hotels & Flights in ' + destination +
+            '</a>' +
+          '</div>';
         chatBox.scrollTop = chatBox.scrollHeight;
       }, 800);
     }
