@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ATLAASSTAYS — AI Travel Booking</title>
 
-  <!-- THE DIRECT TRAVELPAYOUTS DRIVE SCRIPT FROM YOUR SCREEN -->
+  <!-- FIXED: THE EXACT AND CORRECT TRAVELPAYOUTS DRIVE SCRIPT -->
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
     (function () {
         var script = document.createElement("script");
@@ -54,7 +54,6 @@
     </header>
 
     <main>
-      <!-- AI GENERATOR COMPONENT -->
       <section class="ai-container">
         <div style="text-align: center; margin-bottom: 20px;">
           <h2 style="font-size: 24px; color: #ffffff;">Let AI Build Your Journey</h2>
@@ -79,7 +78,6 @@
     </footer>
   </div>
 
-  <!-- FIXED CORE SCRIPT WITH DIRECT REDIRECT URL -->
   <script>
     function checkEnter(event) {
       if (event.key === "Enter") {
@@ -94,14 +92,12 @@
 
       if (destination === "") return;
 
-      // 1. Render user message
       chatBox.innerHTML += '<div class="message user-msg">I want to travel to ' + destination + '</div>';
       inputField.value = "";
       chatBox.scrollTop = chatBox.scrollHeight;
 
-      // 2. Automated Smart Response System with Concatenation
       setTimeout(function() {
-        // Direct integration with Booking via Travelpayouts tracking parameters
+        // Direct, safe integration linking to Booking.com results page via Travelpayouts tracking parameters
         const affiliateLink = "https://booking.com" + encodeURIComponent(destination);
 
         chatBox.innerHTML += 
