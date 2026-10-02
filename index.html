@@ -1,105 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AtlaasStays - AI Travel Booking & Affiliate Platform</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATLAASSTAYS — AI Travel Booking</title>
+  <style>
+    /* Clean Modern UI Layout */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #0b132b; color: #ffffff; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    header { text-align: center; padding: 40px 0; border-bottom: 1px solid #1c2541; }
+    .logo { font-size: 32px; font-weight: 800; letter-spacing: 3px; color: #4cc9f0; }
+    .tagline { font-size: 12px; letter-spacing: 2px; color: #6c757d; margin-top: 5px; text-transform: uppercase; }
     
-    <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
-      (function () {
-          var script = document.createElement("script");
-          script.async = 1;
-          script.setAttribute("data-cmp-ab","2");
-          script.src = 'https://emrldtp.com';
-          document.head.appendChild(script);
-      })();
-    </script>
-
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: system-ui, -apple-system, sans-serif; background-color: #0b0f19; color: #f1f5f9; scroll-behavior: smooth; }
-        header { padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; background-color: rgba(15, 23, 42, 0.8); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 50; }
-        .logo { font-size: 24px; font-weight: 900; letter-spacing: 1px; color: #38bdf8; }
-        .currency { background-color: #1e293b; padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: bold; color: #cbd5e1; border: 1px solid #334155; }
-        .hero { max-width: 800px; margin: 80px auto 40px auto; text-align: center; padding: 0 20px; }
-        .badge { background-color: rgba(56, 189, 248, 0.1); color: #38bdf8; font-size: 12px; padding: 8px 16px; border-radius: 9999px; font-weight: 600; border: 1px solid rgba(56, 189, 248, 0.2); text-transform: uppercase; }
-        h1 { font-size: 48px; font-weight: 900; margin-top: 20px; line-height: 1.1; }
-        h1 span { color: #38bdf8; }
-        .hero-p { color: #94a3b8; margin-top: 24px; font-size: 18px; line-height: 1.6; }
-        .stats-grid { max-width: 800px; margin: 0 auto 80px auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 0 20px; }
-        @media (max-width: 600px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } h1 { font-size: 32px; } }
-        .stat-card { background-color: rgba(15, 23, 42, 0.6); padding: 24px; border-radius: 16px; border: 1px solid #1e293b; text-align: center; }
-        .stat-num { font-size: 28px; font-weight: 800; color: #38bdf8; }
-        .stat-label { font-size: 11px; color: #94a3b8; margin-top: 4px; text-transform: uppercase; }
-        .main-section { max-width: 800px; margin: 0 auto; padding: 0 20px; }
-        .sec-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
-        .sec-title { font-size: 24px; font-weight: 900; }
-        .hotel-card { background-color: #0f172a; border-radius: 24px; overflow: hidden; border: 1px solid #1e293b; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
-        .img-container { position: relative; height: 350px; background-color: #1e293b; }
-        @media (max-width: 600px) { .img-container { height: 220px; } }
-        .hotel-img { width: 100%; height: 100%; object-fit: cover; }
-        .rating { position: absolute; top: 16px; right: 16px; background-color: rgba(3, 7, 18, 0.8); color: #facc15; padding: 6px 12px; border-radius: 9999px; font-size: 14px; font-weight: bold; }
-        .card-body { padding: 32px; }
-        .card-tag { font-size: 12px; font-weight: bold; color: #38bdf8; text-transform: uppercase; }
-        .card-h3 { font-size: 24px; font-weight: bold; margin-top: 4px; }
-        .card-loc { color: #94a3b8; font-size: 14px; margin-top: 4px; }
-        .card-p { color: #cbd5e1; font-size: 15px; margin-top: 16px; line-height: 1.6; }
-        .btn-container { margin-top: 32px; }
-        .book-btn { width: 100%; display: block; text-align: center; background: linear-gradient(to right, #38bdf8, #2563eb); color: white; font-weight: bold; padding: 16px; border-radius: 16px; text-decoration: none; text-transform: uppercase; font-size: 14px; }
-        footer { text-align: center; padding: 40px 0; margin-top: 80px; border-top: 1px solid #0f172a; font-size: 12px; color: #64748b; }
-    </style>
+    /* Interactive AI Chat Interface */
+    .ai-container { background: #1c2541; max-width: 700px; margin: 50px auto; border-radius: 16px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #3a506b; }
+    .chat-box { background: #0b132b; height: 350px; border-radius: 12px; padding: 20px; overflow-y: auto; margin-bottom: 20px; border: 1px solid #3a506b; font-size: 15px; display: flex; flex-direction: column; }
+    .message { margin-bottom: 15px; padding: 12px 16px; border-radius: 8px; max-width: 85%; word-wrap: break-word; }
+    .ai-msg { background: #1f3a60; color: #4cc9f0; align-self: flex-start; }
+    .user-msg { background: #4cc9f0; color: #0b132b; align-self: flex-end; font-weight: 600; text-align: left; }
+    
+    /* Input Form Controls */
+    .input-area { display: flex; gap: 10px; }
+    .input-area input { flex: 1; padding: 15px; border-radius: 8px; border: 1px solid #3a506b; background: #0b132b; color: #fff; font-size: 16px; outline: none; }
+    .input-area input:focus { border-color: #4cc9f0; }
+    .input-area button { background: #4cc9f0; color: #0b132b; border: none; padding: 0 25px; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.3s; }
+    .input-area button:hover { background: #3a506b; color: #fff; }
+    
+    /* Action Button for Redirect */
+    .hotel-link-btn { background: #10b981; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; display: inline-block; font-weight: bold; margin-top: 10px; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); transition: 0.3s; text-align: center; }
+    .hotel-link-btn:hover { transform: translateY(-2px); background: #059669; }
+    footer { text-align: center; padding: 30px 0; color: #6c757d; font-size: 14px; margin-top: 20px; }
+  </style>
 </head>
 <body>
 
+  <div class="container">
     <header>
-        <div class="logo">AtlaasStays</div>
-        <div><span class="currency">USD — $</span></div>
+      <div class="logo">ATLAASSTAYS</div>
+      <div class="tagline">ONE WORLD. ONE AI. ONE JOURNEY.</div>
     </header>
 
-    <section class="hero">
-        <span class="badge">AI-Powered Travel Affiliate Platform</span>
-        <h1>One platform for every <br><span>journey.</span></h1>
-        <p class="hero-p">Book standard luxury properties, flights, and worldwide rentals instantly. Our interface communicates directly with global inventory channels.</p>
-    </section>
-
-    <section class="stats-grid">
-        <div class="stat-card"><div class="stat-num">2.4M+</div><div class="stat-label">Properties</div></div>
-        <div class="stat-card"><div class="stat-num">780+</div><div class="stat-label">Airlines</div></div>
-        <div class="stat-card"><div class="stat-num">190</div><div class="stat-label">Countries</div></div>
-        <div class="stat-card"><div class="stat-num">24/7</div><div class="stat-label">AI Concierge</div></div>
-    </section>
-
-    <section id="hotels" class="main-section">
-        <div class="sec-header">
-            <h2 class="sec-title">Featured Destinations</h2>
+    <main>
+      <!-- AI GENERATOR COMPONENT -->
+      <section class="ai-container">
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h2 style="font-size: 24px; color: #ffffff;">Let AI Build Your Journey</h2>
+          <p style="color: #a5a5a5; font-size: 14px; margin-top: 5px;">Enter your target destination to generate a custom itinerary instantly.</p>
         </div>
-        
-        <div class="hotel-card">
-            <div class="img-container">
-                <svg class="hotel-img" width="100%" height="100%" viewBox="0 0 1200 800" xmlns="http://w3.org">
-                    <rect width="100%" height="100%" fill="#1e293b"/>
-                    <text x="50%" y="50%" font-size="24" fill="#64748b" font-weight="bold" text-anchor="middle">Dubai Premium Accommodation Vista</text>
-                </svg>
-                <span class="rating">★ 4.8</span>
-            </div>
-            <div class="card-body">
-                <span class="card-tag">Premium Selection</span>
-                <h3 class="card-h3">Dubai Skyline Tower</h3>
-                <p class="card-loc">Dubai, United Arab Emirates</p>
-                <p class="card-p">Optimized with automated infrastructure elements to serve responsive international guest flows.</p>
-                
-                <div class="btn-container">
-                    <a href="https://emrldtp.com" target="_blank" rel="noopener noreferrer" class="book-btn">
-                        Book Now
-                    </a>
-                </div>
-            </div>
+
+        <div id="chat-box" class="chat-box">
+          <div class="message ai-msg">
+            <strong>ATLAAS AI:</strong> Welcome to ATLAASSTAYS! Where would you like to travel? Enter your destination below and I will build your journey.
+          </div>
         </div>
-    </section>
+
+        <div class="input-area">
+          <input type="text" id="user-input" placeholder="Where to? (e.g. Dubai, London, New York)" onkeypress="checkEnter(event)">
+          <button onclick="qorsheeSafarka()">Generate</button>
+        </div>
+      </section>
+    </main>
 
     <footer>
-        &copy; 2026 AtlaasStays Travel Platform. All rights reserved.
+      <strong>ATLAASSTAYS</strong> &copy; 2026 — AI-Powered Global Travel Technology.
     </footer>
+  </div>
+
+  <!-- CORE INTELLIGENT ROUTING SCRIPT -->
+  <script>
+    function checkEnter(event) {
+      if (event.key === "Enter") {
+        qorsheeSafarka();
+      }
+    }
+
+    function qorsheeSafarka() {
+      const inputField = document.getElementById("user-input");
+      const chatBox = document.getElementById("chat-box");
+      const destination = inputField.value.trim();
+
+      if (destination === "") return;
+
+      // 1. Render user message
+      chatBox.innerHTML += `<div class="message user-msg">I want to travel to ${destination}</div>`;
+      inputField.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      // 2. Automated Smart Response System
+      setTimeout(() => {
+        // Direct integration with Travelpayouts Link and Partner ID: 579177
+        const affiliateLink = `https://travelpayouts.com{encodeURIComponent(destination)}`;
+
+        chatBox.innerHTML += `
+          <div class="message ai-msg">
+            <strong>ATLAAS AI:</strong> Custom 3-day itinerary successfully generated for <strong>${destination}</strong>:<br><br>
+            • <strong>Day 1:</strong> Airport arrival, hotel check-in, and evening leisure exploration.<br>
+            • <strong>Day 2:</strong> Main landmark sightseeing, historic district tours, and local experiences.<br>
+            • <strong>Day 3:</strong> Premium dining experience and departure preparations.<br><br>
+            <em>Inventory Access:</em> Click the button below to view live flight deals and hotel rates for ${destination}:<br>
+            <a href="${affiliateLink}" target="_blank" class="hotel-link-btn">
+              🏨 Explore Hotels & Flights in ${destination}
+            </a>
+          </div>
+        `;
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 800);
+    }
+  </script>
 
 </body>
 </html>
