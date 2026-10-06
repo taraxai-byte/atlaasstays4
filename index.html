@@ -33,7 +33,7 @@
         .input-area input:focus { border-color: #4cc9f0; outline: none; }
         .input-area button { background: #4cc9f0; color: #0b132b; border: none; padding: 0 25px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
         .input-area button:hover { background: #3a506b; color: #fff; }
-        .widget-container { max-width: 700px; margin: 20px auto; border-radius: 12px; overflow: hidden; background: #ffffff; padding: 15px; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .widget-container { max-width: 700px; margin: 20px auto; border-radius: 12px; overflow: hidden; background: #ffffff; padding: 10px; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
         footer { text-align: center; padding: 30px 0; color: #6c757d; font-size: 14px; margin-top: 40px; border-top: 1px solid #1c2541; }
     </style>
 </head>
@@ -85,17 +85,14 @@
 
             if (input.trim() === "") return;
 
-            // 1. Add User Message to Chat
             var userDiv = document.createElement("div");
             userDiv.className = "message user-msg";
             userDiv.innerHTML = "<strong>You:</strong> " + input;
             chatBox.appendChild(userDiv);
             chatBox.scrollTop = chatBox.scrollHeight;
 
-            // Clear Input Area
             document.getElementById("user-input").value = "";
 
-            // Show Thinking Placeholder
             var typingDiv = document.createElement("div");
             typingDiv.className = "message ai-msg";
             typingDiv.innerHTML = "<strong>ATLAASSTAYS AI:</strong> Thinking...";
@@ -103,34 +100,22 @@
             chatBox.scrollTop = chatBox.scrollHeight;
 
             try {
-                // 100% CORRECTED AND SECURE BYPASS FOR YOUR PRIVATE GEMINI API KEY
-                var p1 = "AIzaSy" + "AQ.Ab8RN6JOoU8";
-                var p2 = "NdvU39Gb5-yuB0E1NWv";
-                var p3 = "2I5XxbRROfN4aNlMxWAA";
-                var secureKey = p1 + p2 + p3;
-                
-                // FIXED REAL GEMINI URL ENDPOINT
-                var apiEndpoint = "https://googleapis.com" + secureKey;
-
-                const response = await fetch(apiEndpoint, {
+                // Wuxuu si toos ah u wacayaa serverless function-ka Vercel si uu furaha u hesho
+                const response = await fetch("/api/gemini", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        contents: [{
-                            parts: [{
-                                text: "You are the official AI agent of ATLAASSTAYS. The user wants to travel to or is asking about: " + input + ". Respond in the EXACT SAME LANGUAGE the user used. Give a highly attractive, professional travel guide. Include a section highlighting luxury/beautiful hotels, breath-taking spots, and local attractions to make them excited. End the message by inviting them to use the search bar below to book their flights and accommodation right away."
-                            }]
-                        }]
-                    })
+                    body: JSON.stringify({ destination: input })
                 });
 
                 const data = await response.json();
-                let aiResponse = data.candidates[0].content.parts[0].text;
                 
-                // Format response lines to display beautifully
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                let aiResponse = data.text;
                 aiResponse = aiResponse.replace(/\n/g, "<br>");
 
-                // Remove typing placeholder and display AI answer
                 if (chatBox.contains(typingDiv)) {
                     chatBox.removeChild(typingDiv);
                 }
@@ -140,11 +125,7 @@
                 chatBox.appendChild(aiDiv);
                 
                 chatBox.scrollTop = chatBox.scrollHeight;
-
-                // 3. Display Travelpayouts Widget Container
-                if (widgetBox) {
-                    widgetBox.style.display = "block";
-                }
+                widgetBox.style.display = "block";
 
             } catch (error) {
                 if (chatBox.contains(typingDiv)) {
@@ -154,12 +135,9 @@
                 errorDiv.className = "message ai-msg";
                 errorDiv.innerHTML = "<strong>ATLAASSTAYS AI:</strong> Sorry, I encountered an issue. Please look below to search your flights and hotels directly.";
                 chatBox.appendChild(errorDiv);
-                if (widgetBox) {
-                    widgetBox.style.display = "block";
-                }
+                widgetBox.style.display = "block";
             }
         }
     </script>
-
 </body>
 </html>
