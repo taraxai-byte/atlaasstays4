@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>ATLAASSTAYS — AI Travel Booking</title>
+
   <meta
     name="description"
-    content="ATLAASSTAYS — One World. One AI. One Journey. AI-powered global travel technology."
-  />
-  <meta name="theme-color" content="#0d0600" />
+    content="ATLAASSTAYS — ONE WORLD. ONE AI. ONE JOURNEY."
+  >
+
+  <meta name="theme-color" content="#0d0600">
+
+  <!-- =========================================================
+       TRAVELPAYOUTS — YOUR OFFICIAL SCRIPT
+       DO NOT REMOVE OR CHANGE THIS CODE
+       ========================================================= -->
+
+  <script nowprocket data-noptimize="1" data-cfasync="false"
+    data-wpfc-render="false" seraph-accel-crit="1"
+    data-no-defer="1" data-cmp-ab="2">
+
+    (function () {
+      var script = document.createElement("script");
+
+      script.async = 1;
+
+      script.setAttribute("data-cmp-ab", "2");
+
+      script.src =
+        "https://emrldtp.com/NTc5MTc3.js?t=579177";
+
+      document.head.appendChild(script);
+    })();
+
+  </script>
 
   <style>
+
     :root {
-      --bg: #0d0600;
-      --bg-2: #140a02;
-      --panel: rgba(255, 255, 255, 0.055);
-      --panel-strong: rgba(255, 255, 255, 0.085);
-      --border: rgba(255, 255, 255, 0.12);
+      --black: #0d0600;
+      --black2: #160b02;
       --gold: #ff8c00;
-      --gold-2: #ffb347;
-      --gold-soft: rgba(255, 140, 0, 0.15);
+      --gold2: #ffb347;
       --white: #ffffff;
-      --muted: #a9a09a;
-      --success: #50d890;
-      --danger: #ff6262;
-      --radius: 22px;
-      --shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+      --muted: #aaa19a;
+      --border: rgba(255,255,255,.11);
+      --glass: rgba(255,255,255,.055);
     }
 
     * {
@@ -43,27 +64,31 @@
       min-height: 100vh;
       color: var(--white);
       background:
-        radial-gradient(circle at 15% 10%, rgba(255, 140, 0, 0.13), transparent 28%),
-        radial-gradient(circle at 85% 20%, rgba(255, 179, 71, 0.08), transparent 25%),
-        linear-gradient(145deg, #080402 0%, #0d0600 45%, #140a02 100%);
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(255,140,0,.16),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(255,179,71,.08),
+          transparent 25%
+        ),
+        linear-gradient(
+          145deg,
+          #080402,
+          #0d0600 50%,
+          #160b02
+        );
+
       font-family:
-        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
       line-height: 1.6;
       overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-      background-size: 55px 55px;
-      mask-image: linear-gradient(to bottom, black, transparent 75%);
-      z-index: -1;
     }
 
     button,
@@ -75,568 +100,635 @@
       border: 0;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .container {
+      width: min(1200px, calc(100% - 30px));
+      margin: auto;
     }
 
-    .page {
-      width: min(1240px, calc(100% - 32px));
-      margin: 0 auto;
-    }
+    /* ================= NAVBAR ================= */
 
-    /* NAVIGATION */
-
-    .nav {
+    .navbar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(18px);
-      background: rgba(13, 6, 0, 0.72);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+      z-index: 999;
 
-    .nav-inner {
-      width: min(1240px, calc(100% - 32px));
       height: 76px;
-      margin: auto;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+
+      padding: 0 25px;
+
+      backdrop-filter: blur(20px);
+
+      background:
+        rgba(13,6,0,.78);
+
+      border-bottom:
+        1px solid rgba(255,255,255,.08);
     }
 
-    .brand {
+    .logo {
       display: flex;
       align-items: center;
       gap: 12px;
+
+      font-size: 17px;
       font-weight: 900;
+
       letter-spacing: 2px;
     }
 
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
+    .logo-symbol {
+      width: 42px;
+      height: 42px;
+
       display: grid;
       place-items: center;
-      color: #140a02;
-      background: linear-gradient(135deg, var(--gold-2), var(--gold));
-      box-shadow: 0 0 30px rgba(255, 140, 0, 0.28);
+
+      border-radius: 13px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--gold2),
+          var(--gold)
+        );
+
+      color: #170900;
+
       font-weight: 1000;
+
+      box-shadow:
+        0 0 30px rgba(255,140,0,.25);
     }
 
-    .brand-name {
-      font-size: 16px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      color: #d7d0ca;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-2);
-    }
-
-    .nav-cta {
+    .nav-button {
       padding: 11px 18px;
+
       border-radius: 999px;
+
       background: var(--gold);
-      color: #160900;
-      font-weight: 800;
+
+      color: #170900;
+
+      font-weight: 900;
+
       cursor: pointer;
-      box-shadow: 0 10px 30px rgba(255, 140, 0, 0.2);
     }
 
-    /* HERO */
+    /* ================= HERO ================= */
 
     .hero {
-      padding: 90px 0 65px;
       text-align: center;
+
+      padding:
+        90px 0
+        55px;
     }
 
-    .eyebrow {
+    .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid rgba(255, 140, 0, 0.28);
-      background: rgba(255, 140, 0, 0.08);
-      color: var(--gold-2);
+
+      padding: 8px 15px;
+
+      border:
+        1px solid rgba(255,140,0,.28);
+
       border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.4px;
+
+      background:
+        rgba(255,140,0,.08);
+
+      color: var(--gold2);
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      letter-spacing: 1.5px;
+
       text-transform: uppercase;
     }
 
-    .eyebrow-dot {
+    .dot {
       width: 7px;
       height: 7px;
+
       border-radius: 50%;
+
       background: var(--gold);
-      box-shadow: 0 0 14px var(--gold);
+
+      box-shadow:
+        0 0 15px var(--gold);
     }
 
     .hero h1 {
-      max-width: 1000px;
-      margin: 24px auto 18px;
-      font-size: clamp(48px, 8vw, 92px);
-      line-height: 0.98;
+      max-width: 950px;
+
+      margin:
+        25px auto
+        20px;
+
+      font-size:
+        clamp(46px, 8vw, 88px);
+
+      line-height: .98;
+
       letter-spacing: -4px;
+
       font-weight: 950;
     }
 
-    .gradient-text {
-      background: linear-gradient(110deg, #fff 25%, #ffb347 58%, #ff8c00 90%);
+    .gradient {
+      background:
+        linear-gradient(
+          110deg,
+          #ffffff,
+          #ffb347,
+          #ff8c00
+        );
+
       -webkit-background-clip: text;
       background-clip: text;
+
       color: transparent;
     }
 
-    .hero p {
-      max-width: 720px;
+    .hero-description {
+      max-width: 700px;
+
       margin: auto;
+
       color: var(--muted);
+
       font-size: 17px;
     }
 
-    /* SEARCH */
+    /* ================= AI SEARCH ================= */
 
-    .search-shell {
-      max-width: 980px;
-      margin: 45px auto 0;
-      padding: 10px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(20px);
+    .ai-box {
+      max-width: 950px;
+
+      margin:
+        45px auto
+        0;
+
+      padding: 12px;
+
+      border-radius: 27px;
+
+      background:
+        rgba(255,255,255,.055);
+
+      border:
+        1px solid var(--border);
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,.45);
+
+      backdrop-filter:
+        blur(20px);
     }
 
-    .search-box {
+    .search {
       display: grid;
-      grid-template-columns: 1fr auto;
+
+      grid-template-columns:
+        1fr
+        auto;
+
       gap: 10px;
-      padding: 9px;
-      border-radius: 20px;
-      background: rgba(0,0,0,0.28);
+
+      padding: 8px;
+
+      border-radius: 19px;
+
+      background:
+        rgba(0,0,0,.30);
     }
 
-    .destination-input {
+    #destination {
       min-width: 0;
+
+      padding:
+        18px
+        20px;
+
       border: 0;
-      outline: 0;
-      padding: 18px 20px;
-      border-radius: 16px;
-      color: white;
+
+      outline: none;
+
       background: transparent;
+
+      color: white;
+
       font-size: 16px;
     }
 
-    .destination-input::placeholder {
-      color: #817971;
+    #destination::placeholder {
+      color: #817870;
     }
 
-    .generate-btn {
-      padding: 0 28px;
-      border-radius: 16px;
-      cursor: pointer;
+    #generate {
+      padding:
+        0 27px;
+
+      border-radius: 15px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--gold2),
+          var(--gold)
+        );
+
       color: #170900;
-      background: linear-gradient(135deg, #ffb347, #ff8c00);
+
       font-weight: 900;
-      transition: 0.2s ease;
-      box-shadow: 0 10px 35px rgba(255, 140, 0, 0.25);
-    }
 
-    .generate-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 45px rgba(255, 140, 0, 0.35);
-    }
-
-    .generate-btn:disabled {
-      opacity: 0.65;
-      cursor: wait;
-      transform: none;
-    }
-
-    .quick-destinations {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 15px;
-    }
-
-    .quick-btn {
-      padding: 7px 12px;
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.035);
-      color: #bdb5ae;
       cursor: pointer;
+
+      transition: .2s;
+    }
+
+    #generate:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 12px 35px
+        rgba(255,140,0,.28);
+    }
+
+    #generate:disabled {
+      opacity: .6;
+
+      cursor: wait;
+    }
+
+    /* ================= QUICK DESTINATIONS ================= */
+
+    .quick {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 14px;
+    }
+
+    .quick button {
+      padding:
+        7px
+        13px;
+
+      border-radius: 999px;
+
+      border:
+        1px solid rgba(255,255,255,.09);
+
+      background:
+        rgba(255,255,255,.035);
+
+      color: #bbb2aa;
+
+      cursor: pointer;
+
       font-size: 12px;
     }
 
-    .quick-btn:hover {
-      border-color: rgba(255,140,0,0.4);
-      color: var(--gold-2);
+    .quick button:hover {
+      color: var(--gold2);
+
+      border-color:
+        rgba(255,140,0,.35);
     }
 
-    /* AI RESULT */
+    /* ================= AI RESPONSE ================= */
 
-    .ai-section {
+    #ai-result {
       display: none;
-      max-width: 980px;
-      margin: 28px auto 0;
-    }
 
-    .ai-section.visible {
-      display: block;
-      animation: appear 0.4s ease;
-    }
+      max-width: 950px;
 
-    @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+      margin:
+        22px auto
+        0;
 
-    .ai-card {
       padding: 25px;
-      border: 1px solid rgba(255,140,0,0.18);
-      border-radius: var(--radius);
-      background:
-        linear-gradient(135deg, rgba(255,140,0,0.08), rgba(255,255,255,0.035));
+
       text-align: left;
+
+      border:
+        1px solid
+        rgba(255,140,0,.2);
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,140,0,.09),
+          rgba(255,255,255,.035)
+        );
     }
 
-    .ai-header {
+    #ai-result.show {
+      display: block;
+    }
+
+    .ai-title {
       display: flex;
+
       align-items: center;
+
       gap: 12px;
-      margin-bottom: 17px;
+
+      margin-bottom: 16px;
     }
 
     .ai-icon {
-      width: 42px;
-      height: 42px;
+      width: 43px;
+      height: 43px;
+
       display: grid;
+
       place-items: center;
+
       border-radius: 13px;
+
       background: var(--gold);
-      color: #160900;
-      font-weight: 950;
+
+      color: #170900;
+
+      font-weight: 1000;
     }
 
-    .ai-header small {
+    .ai-title small {
       display: block;
-      color: var(--gold-2);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+
+      color: var(--gold2);
+
+      font-size: 10px;
+
+      font-weight: 900;
+
+      letter-spacing: 1.3px;
     }
 
-    .ai-header strong {
-      font-size: 16px;
-    }
-
-    .ai-response {
-      color: #e9e2dc;
+    .ai-title strong {
       font-size: 15px;
+    }
+
+    #ai-text {
+      color: #e8e0da;
+
+      font-size: 15px;
+
       line-height: 1.8;
     }
 
-    /* SERVICES */
+    /* ================= TRAVELPAYOUTS AREA ================= */
+
+    .booking-section {
+      display: none;
+
+      max-width: 950px;
+
+      margin:
+        25px auto
+        0;
+
+      padding: 25px;
+
+      border-radius: 23px;
+
+      background:
+        rgba(255,255,255,.96);
+
+      color: #17100a;
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+    }
+
+    .booking-section.show {
+      display: block;
+    }
+
+    .booking-title {
+      text-align: center;
+
+      margin-bottom: 18px;
+    }
+
+    .booking-title h2 {
+      font-size: 24px;
+    }
+
+    .booking-title p {
+      color: #71675f;
+
+      font-size: 13px;
+    }
+
+    /*
+      IMPORTANT:
+      Your Travelpayouts script is loaded above.
+
+      This container gives the Travelpayouts
+      script a dedicated place to render its
+      booking/search experience if the script
+      is configured to render here.
+    */
+
+    #travelpayouts-widget {
+      min-height: 80px;
+
+      border-radius: 15px;
+
+      background: #f7f7f7;
+
+      overflow: hidden;
+    }
+
+    /* ================= SERVICES ================= */
 
     .section {
-      padding: 70px 0;
+      padding:
+        70px 0;
     }
 
-    .section-heading {
-      margin-bottom: 28px;
-    }
+    .section-label {
+      color: var(--gold2);
 
-    .section-heading span {
-      color: var(--gold-2);
-      font-size: 12px;
+      font-size: 11px;
+
       font-weight: 900;
+
       letter-spacing: 1.5px;
+
       text-transform: uppercase;
     }
 
-    .section-heading h2 {
+    .section h2 {
       margin-top: 7px;
-      font-size: clamp(30px, 5vw, 48px);
+
+      font-size:
+        clamp(30px, 5vw, 47px);
+
       line-height: 1.1;
+
       letter-spacing: -1.5px;
     }
 
-    .section-heading p {
+    .section-description {
       margin-top: 10px;
+
       color: var(--muted);
     }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
       gap: 15px;
+
+      margin-top: 28px;
     }
 
-    .service-card {
-      position: relative;
-      overflow: hidden;
+    .service {
       min-height: 190px;
+
       padding: 24px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: linear-gradient(145deg, rgba(255,255,255,0.065), rgba(255,255,255,0.025));
-      transition: 0.25s ease;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 21px;
+
+      background:
+        rgba(255,255,255,.04);
+
+      transition: .25s;
     }
 
-    .service-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(255,140,0,0.3);
-      background: linear-gradient(145deg, rgba(255,140,0,0.10), rgba(255,255,255,0.035));
+    .service:hover {
+      transform:
+        translateY(-5px);
+
+      border-color:
+        rgba(255,140,0,.3);
+
+      background:
+        rgba(255,140,0,.07);
     }
 
     .service-icon {
       width: 48px;
       height: 48px;
+
       display: grid;
+
       place-items: center;
+
+      margin-bottom: 24px;
+
       border-radius: 15px;
-      background: var(--gold-soft);
-      color: var(--gold-2);
+
+      background:
+        rgba(255,140,0,.13);
+
+      color: var(--gold2);
+
       font-size: 22px;
-      margin-bottom: 25px;
     }
 
-    .service-card h3 {
+    .service h3 {
       font-size: 17px;
-      margin-bottom: 6px;
+
+      margin-bottom: 5px;
     }
 
-    .service-card p {
+    .service p {
       color: var(--muted);
+
       font-size: 13px;
     }
 
-    /* JOURNEY */
-
-    .journey {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
-    }
-
-    .journey-panel {
-      min-height: 330px;
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: 26px;
-      background: rgba(255,255,255,0.04);
-    }
-
-    .route {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin: 35px 0;
-    }
-
-    .airport {
-      flex: 1;
-      padding: 20px;
-      border-radius: 18px;
-      background: rgba(0,0,0,0.25);
-    }
-
-    .airport small {
-      color: var(--muted);
-      display: block;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .airport strong {
-      display: block;
-      margin-top: 4px;
-      font-size: 25px;
-    }
-
-    .route-line {
-      color: var(--gold);
-      font-size: 22px;
-    }
-
-    .journey-list {
-      display: grid;
-      gap: 11px;
-    }
-
-    .journey-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 13px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      color: #c8c0ba;
-      font-size: 14px;
-    }
-
-    .journey-item strong {
-      color: white;
-    }
-
-    /* CTA */
-
-    .cta {
-      position: relative;
-      overflow: hidden;
-      padding: 55px 35px;
-      text-align: center;
-      border-radius: 30px;
-      border: 1px solid rgba(255,140,0,0.25);
-      background:
-        radial-gradient(circle at 50% 0%, rgba(255,140,0,0.18), transparent 45%),
-        rgba(255,255,255,0.035);
-    }
-
-    .cta h2 {
-      font-size: clamp(30px, 5vw, 54px);
-      letter-spacing: -1.8px;
-      line-height: 1.05;
-    }
-
-    .cta p {
-      max-width: 650px;
-      margin: 13px auto 25px;
-      color: var(--muted);
-    }
-
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px 24px;
-      border-radius: 999px;
-      color: #160900;
-      background: var(--gold);
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    /* FOOTER */
+    /* ================= FOOTER ================= */
 
     footer {
-      margin-top: 75px;
-      padding: 35px 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: #756d67;
-      font-size: 13px;
+      margin-top: 50px;
+
+      padding:
+        35px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
       text-align: center;
+
+      color: #766e68;
+
+      font-size: 13px;
     }
 
     footer strong {
-      color: #b9b0a9;
+      color: #c5bdb7;
+
       letter-spacing: 1.5px;
     }
 
-    /* TOAST */
+    /* ================= MOBILE ================= */
 
-    .toast {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 200;
-      max-width: 350px;
-      padding: 14px 17px;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
-      background: rgba(20,10,2,0.92);
-      backdrop-filter: blur(18px);
-      box-shadow: var(--shadow);
-      color: #eee;
-      transform: translateY(20px);
-      opacity: 0;
-      pointer-events: none;
-      transition: 0.25s ease;
-      font-size: 13px;
-    }
-
-    .toast.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 850px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 65px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2.5px;
-      }
+    @media(max-width: 800px) {
 
       .services {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2,1fr);
       }
 
-      .journey {
-        grid-template-columns: 1fr;
-      }
     }
 
-    @media (max-width: 600px) {
-      .page,
-      .nav-inner {
-        width: min(100% - 22px, 1240px);
-      }
+    @media(max-width: 600px) {
 
-      .brand-name {
-        font-size: 14px;
-      }
-
-      .nav-cta {
-        padding: 9px 13px;
-        font-size: 12px;
+      .navbar {
+        padding:
+          0 14px;
       }
 
       .hero {
-        padding: 52px 0 40px;
+        padding:
+          60px 0
+          40px;
       }
 
       .hero h1 {
-        font-size: 48px;
+        font-size: 47px;
+
+        letter-spacing:
+          -2.5px;
       }
 
-      .hero p {
+      .hero-description {
         font-size: 15px;
       }
 
-      .search-box {
+      .search {
         grid-template-columns: 1fr;
       }
 
-      .generate-btn {
+      #generate {
         min-height: 54px;
       }
 
@@ -644,439 +736,567 @@
         grid-template-columns: 1fr;
       }
 
-      .service-card {
-        min-height: 160px;
+      .booking-section {
+        padding: 15px;
       }
 
-      .route {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .route-line {
-        text-align: center;
-      }
-
-      .journey-panel {
-        padding: 22px;
-      }
-
-      .cta {
-        padding: 42px 20px;
-      }
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="#" class="brand">
-        <span class="brand-mark">A</span>
-        <span class="brand-name">ATLAASSTAYS</span>
-      </a>
+  <!-- ================= NAVIGATION ================= -->
 
-      <div class="nav-links">
-        <a href="#explore">Explore</a>
-        <a href="#services">Services</a>
-        <a href="#journey">AI Journey</a>
+  <nav class="navbar">
+
+    <div class="logo">
+
+      <div class="logo-symbol">
+        A
       </div>
 
-      <button class="nav-cta" onclick="focusSearch()">
-        Plan My Journey
-      </button>
+      ATLAASSTAYS
+
     </div>
+
+    <button
+      class="nav-button"
+      onclick="focusDestination()"
+    >
+      Plan My Journey
+    </button>
+
   </nav>
 
-  <main class="page">
 
-    <!-- HERO -->
-    <section class="hero" id="explore">
+  <main class="container">
 
-      <div class="eyebrow">
-        <span class="eyebrow-dot"></span>
-        AI-Powered Global Travel
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+      <div class="badge">
+        <span class="dot"></span>
+        AI-POWERED GLOBAL TRAVEL
       </div>
 
       <h1>
-        <span class="gradient-text">One World.</span><br />
+
+        <span class="gradient">
+          One World.
+        </span>
+
+        <br>
+
         One AI. One Journey.
+
       </h1>
 
-      <p>
-        Tell ATLAASSTAYS where you want to go. Our AI helps turn your idea
-        into a smarter travel journey.
+      <p class="hero-description">
+
+        Tell ATLAASSTAYS where you want to go.
+        Our AI helps you discover your journey,
+        then connects you to travel offers.
+
       </p>
 
-      <!-- SEARCH -->
-      <div class="search-shell">
-        <div class="search-box">
+
+      <!-- ================= AI SEARCH ================= -->
+
+      <div class="ai-box">
+
+        <div class="search">
+
           <input
-            id="user-input"
-            class="destination-input"
+            id="destination"
             type="text"
             autocomplete="off"
-            placeholder="Where do you want to travel?  e.g. Dubai, London, New York"
+            placeholder="Where are you going? e.g. Dubai, London, New York"
             onkeydown="handleEnter(event)"
-          />
+          >
 
           <button
-            id="generate-button"
-            class="generate-btn"
+            id="generate"
             onclick="generateJourney()"
           >
             Generate Journey →
           </button>
+
         </div>
 
-        <div class="quick-destinations">
-          <button class="quick-btn" onclick="setDestination('Dubai')">Dubai</button>
-          <button class="quick-btn" onclick="setDestination('New York')">New York</button>
-          <button class="quick-btn" onclick="setDestination('London')">London</button>
-          <button class="quick-btn" onclick="setDestination('Istanbul')">Istanbul</button>
-          <button class="quick-btn" onclick="setDestination('Paris')">Paris</button>
-          <button class="quick-btn" onclick="setDestination('Nairobi')">Nairobi</button>
+
+        <div class="quick">
+
+          <button
+            onclick="chooseDestination('Dubai')"
+          >
+            Dubai
+          </button>
+
+          <button
+            onclick="chooseDestination('London')"
+          >
+            London
+          </button>
+
+          <button
+            onclick="chooseDestination('New York')"
+          >
+            New York
+          </button>
+
+          <button
+            onclick="chooseDestination('Istanbul')"
+          >
+            Istanbul
+          </button>
+
+          <button
+            onclick="chooseDestination('Paris')"
+          >
+            Paris
+          </button>
+
+          <button
+            onclick="chooseDestination('Nairobi')"
+          >
+            Nairobi
+          </button>
+
         </div>
+
       </div>
 
-      <!-- AI RESULT -->
-      <div id="ai-section" class="ai-section">
-        <div class="ai-card">
 
-          <div class="ai-header">
-            <div class="ai-icon">✦</div>
+      <!-- ================= AI RESPONSE ================= -->
 
-            <div>
-              <small>ATLAASSTAYS AI</small>
-              <strong>Your journey intelligence</strong>
-            </div>
+      <div id="ai-result">
+
+        <div class="ai-title">
+
+          <div class="ai-icon">
+            ✦
           </div>
 
-          <div id="ai-response" class="ai-response">
-            Preparing your journey...
+          <div>
+
+            <small>
+              ATLAASSTAYS AI
+            </small>
+
+            <strong>
+              Your AI Travel Concierge
+            </strong>
+
           </div>
 
         </div>
+
+        <div id="ai-text">
+          Preparing your journey...
+        </div>
+
+      </div>
+
+
+      <!-- ================= TRAVELPAYOUTS ================= -->
+
+      <div
+        id="booking-section"
+        class="booking-section"
+      >
+
+        <div class="booking-title">
+
+          <h2>
+            Search Flights & Hotels
+          </h2>
+
+          <p id="booking-destination">
+            Find travel options for your destination.
+          </p>
+
+        </div>
+
+        <!--
+          YOUR TRAVELPAYOUTS SCRIPT IS LOADED IN <HEAD>.
+
+          Keep this container available for the
+          Travelpayouts integration.
+        -->
+
+        <div id="travelpayouts-widget">
+
+        </div>
+
       </div>
 
     </section>
 
-    <!-- SERVICES -->
-    <section class="section" id="services">
 
-      <div class="section-heading">
-        <span>One platform</span>
-        <h2>Everything for your journey.</h2>
-        <p>
-          Discover, plan and prepare your next trip through one intelligent
-          travel experience.
-        </p>
-      </div>
+    <!-- ================= SERVICES ================= -->
+
+    <section class="section">
+
+      <span class="section-label">
+        ONE PLATFORM
+      </span>
+
+      <h2>
+        Everything for your journey.
+      </h2>
+
+      <p class="section-description">
+        Discover and plan your next journey
+        through ATLAASSTAYS.
+      </p>
+
 
       <div class="services">
 
-        <div class="service-card">
-          <div class="service-icon">✈</div>
-          <h3>Flights</h3>
-          <p>
-            Discover flight options and travel routes for destinations around
-            the world.
-          </p>
-        </div>
+        <div class="service">
 
-        <div class="service-card">
-          <div class="service-icon">⌂</div>
-          <h3>Hotels</h3>
-          <p>
-            Find stays that fit your destination, travel style and budget.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🚕</div>
-          <h3>Airport Transfers</h3>
-          <p>
-            Plan reliable ground transportation between airports and your stay.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">◇</div>
-          <h3>Tours & Experiences</h3>
-          <p>
-            Discover activities and experiences that can make every journey
-            memorable.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- AI JOURNEY -->
-    <section class="section" id="journey">
-
-      <div class="section-heading">
-        <span>AI Travel Intelligence</span>
-        <h2>Your journey, intelligently planned.</h2>
-        <p>
-          ATLAASSTAYS is designed to bring travel discovery, planning and
-          booking into one connected experience.
-        </p>
-      </div>
-
-      <div class="journey">
-
-        <div class="journey-panel">
-
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Smart Travel Flow
+          <div class="service-icon">
+            ✈
           </div>
 
-          <div class="route">
-            <div class="airport">
-              <small>Origin</small>
-              <strong>Worldwide</strong>
-            </div>
+          <h3>
+            Flights
+          </h3>
 
-            <div class="route-line">→</div>
-
-            <div class="airport">
-              <small>Destination</small>
-              <strong id="destination-preview">Your Destination</strong>
-            </div>
-          </div>
-
-          <p style="color:#a9a09a;">
-            Start with a destination and let ATLAASSTAYS AI help you discover
-            the next steps.
+          <p>
+            Discover flight options for destinations
+            around the world.
           </p>
 
         </div>
 
-        <div class="journey-panel">
 
-          <div class="section-heading" style="margin-bottom:15px;">
-            <span>Journey engine</span>
-            <h2 style="font-size:28px;">Built around you.</h2>
+        <div class="service">
+
+          <div class="service-icon">
+            ⌂
           </div>
 
-          <div class="journey-list">
-            <div class="journey-item">
-              <span>Destination discovery</span>
-              <strong>AI</strong>
-            </div>
+          <h3>
+            Hotels
+          </h3>
 
-            <div class="journey-item">
-              <span>Travel planning</span>
-              <strong>AI</strong>
-            </div>
-
-            <div class="journey-item">
-              <span>Flight discovery</span>
-              <strong>Global</strong>
-            </div>
-
-            <div class="journey-item">
-              <span>Hotel discovery</span>
-              <strong>Global</strong>
-            </div>
-
-            <div class="journey-item">
-              <span>Journey support</span>
-              <strong>24/7</strong>
-            </div>
-          </div>
+          <p>
+            Discover stays based on your destination,
+            style and budget.
+          </p>
 
         </div>
 
-      </div>
-    </section>
 
-    <!-- CTA -->
-    <section class="section">
+        <div class="service">
 
-      <div class="cta">
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          The future of travel
+          <div class="service-icon">
+            🚕
+          </div>
+
+          <h3>
+            Airport Transfers
+          </h3>
+
+          <p>
+            Plan transportation between airports
+            and your accommodation.
+          </p>
+
         </div>
 
-        <h2 style="margin-top:18px;">
-          Your next journey starts with one idea.
-        </h2>
 
-        <p>
-          Enter your destination and let ATLAASSTAYS begin building your
-          travel experience.
-        </p>
+        <div class="service">
 
-        <button class="cta-button" onclick="focusSearch()">
-          Generate My Journey Instantly →
-        </button>
+          <div class="service-icon">
+            ◇
+          </div>
+
+          <h3>
+            Tours & Experiences
+          </h3>
+
+          <p>
+            Discover experiences and activities
+            for your destination.
+          </p>
+
+        </div>
+
       </div>
 
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+
+  <!-- ================= FOOTER ================= -->
+
   <footer>
-    <div class="page">
-      <strong>ATLAASSTAYS</strong>
-      <br />
-      ONE WORLD. ONE AI. ONE JOURNEY.
-      <br /><br />
-      © 2026 ATLAASSTAYS GLOBAL TECHNOLOGIES. All rights reserved.
-    </div>
+
+    <strong>
+      ATLAASSTAYS
+    </strong>
+
+    <br>
+
+    ONE WORLD. ONE AI. ONE JOURNEY.
+
+    <br><br>
+
+    © 2026 ATLAASSTAYS GLOBAL TECHNOLOGIES.
+    All rights reserved.
+
   </footer>
 
-  <div id="toast" class="toast"></div>
+
+  <!-- ================= JAVASCRIPT ================= -->
 
   <script>
-    const input = document.getElementById("user-input");
-    const responseBox = document.getElementById("ai-response");
-    const aiSection = document.getElementById("ai-section");
-    const generateButton = document.getElementById("generate-button");
-    const destinationPreview =
-      document.getElementById("destination-preview");
 
-    function focusSearch() {
-      input.focus();
-      input.scrollIntoView({
+    const destinationInput =
+      document.getElementById("destination");
+
+    const generateButton =
+      document.getElementById("generate");
+
+    const aiResult =
+      document.getElementById("ai-result");
+
+    const aiText =
+      document.getElementById("ai-text");
+
+    const bookingSection =
+      document.getElementById("booking-section");
+
+    const bookingDestination =
+      document.getElementById("booking-destination");
+
+
+    function focusDestination() {
+
+      destinationInput.focus();
+
+      destinationInput.scrollIntoView({
         behavior: "smooth",
         block: "center"
       });
+
     }
 
-    function setDestination(destination) {
-      input.value = destination;
-      destinationPreview.textContent = destination;
-      focusSearch();
+
+    function chooseDestination(city) {
+
+      destinationInput.value = city;
+
+      focusDestination();
+
     }
+
 
     function handleEnter(event) {
+
       if (event.key === "Enter") {
+
         generateJourney();
+
       }
+
     }
 
-    function escapeHTML(value) {
-      const div = document.createElement("div");
-      div.textContent = value;
+
+    function escapeHTML(text) {
+
+      const div =
+        document.createElement("div");
+
+      div.textContent = text;
+
       return div.innerHTML;
+
     }
 
-    function formatAIResponse(text) {
+
+    function formatAI(text) {
+
       return escapeHTML(text)
         .replace(/\n/g, "<br>")
-        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+        .replace(
+          /\*\*(.*?)\*\*/g,
+          "<strong>$1</strong>"
+        );
+
     }
 
-    function showToast(message) {
-      const toast = document.getElementById("toast");
-
-      toast.textContent = message;
-      toast.classList.add("show");
-
-      setTimeout(() => {
-        toast.classList.remove("show");
-      }, 3500);
-    }
 
     async function generateJourney() {
-      const destination = input.value.trim();
+
+      const destination =
+        destinationInput.value.trim();
+
 
       if (!destination) {
-        showToast("Please enter a destination first.");
-        focusSearch();
+
+        destinationInput.focus();
+
         return;
+
       }
 
-      destinationPreview.textContent = destination;
 
-      aiSection.classList.add("visible");
+      /*
+        SHOW AI AREA
+      */
 
-      responseBox.innerHTML = `
-        <span style="color:#ffb347;">
-          ATLAASSTAYS AI is preparing your journey to
-          <strong>${escapeHTML(destination)}</strong>...
-        </span>
-      `;
+      aiResult.classList.add("show");
+
+      aiText.innerHTML =
+
+        "ATLAASSTAYS AI is preparing your journey to " +
+
+        "<strong>" +
+
+        escapeHTML(destination) +
+
+        "</strong>...";
+
+
+      /*
+        SHOW TRAVELPAYOUTS AREA
+        AFTER DESTINATION IS ENTERED
+      */
+
+      bookingSection.classList.add("show");
+
+      bookingDestination.innerHTML =
+
+        "Travel options for <strong>" +
+
+        escapeHTML(destination) +
+
+        "</strong>";
+
 
       generateButton.disabled = true;
-      generateButton.textContent = "Building...";
 
-      aiSection.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
+      generateButton.textContent =
+        "Building...";
+
 
       try {
-        /*
-          IMPORTANT:
-          Your Gemini API key must NOT be placed inside this HTML file.
 
-          This request goes to your existing backend endpoint:
-          /api/gemini
+        /*
+          YOUR EXISTING AI BACKEND
+
+          The API key must remain on the server.
+
+          Do NOT put Gemini/OpenAI keys
+          inside this HTML file.
         */
 
-        const response = await fetch("/api/gemini", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            destination: destination
-          })
-        });
+        const response =
+          await fetch(
+            "/api/gemini",
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json"
+              },
+
+              body: JSON.stringify({
+                destination:
+                  destination
+              })
+            }
+          );
+
 
         if (!response.ok) {
-          throw new Error("AI service returned an error.");
+
+          throw new Error(
+            "AI endpoint unavailable"
+          );
+
         }
 
-        const data = await response.json();
+
+        const data =
+          await response.json();
+
 
         if (data.error) {
-          throw new Error(data.error);
+
+          throw new Error(
+            data.error
+          );
+
         }
 
-        if (!data.text) {
-          throw new Error("No AI response was returned.");
+
+        if (data.text) {
+
+          aiText.innerHTML =
+            formatAI(data.text);
+
+        } else {
+
+          throw new Error(
+            "Empty AI response"
+          );
+
         }
 
-        responseBox.innerHTML = formatAIResponse(data.text);
-
-        showToast("Your AI journey is ready.");
 
       } catch (error) {
 
-        console.error("ATLAASSTAYS AI error:", error);
+        console.error(
+          "ATLAASSTAYS AI:",
+          error
+        );
+
 
         /*
-          If /api/gemini is not deployed yet, the interface still works
-          and gives the visitor a useful fallback message.
+          IMPORTANT:
+
+          Even if AI backend is unavailable,
+          Travelpayouts remains visible so
+          visitors can continue to travel search.
         */
 
-        responseBox.innerHTML = `
-          <strong style="color:#ffb347;">
-            Journey destination: ${escapeHTML(destination)}
-          </strong>
-          <br><br>
-          ATLAASSTAYS is ready to help you plan this journey.
-          The AI service is currently unavailable, so please try again
-          in a moment.
-        `;
+        aiText.innerHTML =
 
-        showToast("AI service is currently unavailable.");
+          "<strong>" +
+
+          escapeHTML(destination) +
+
+          "</strong>" +
+
+          "<br><br>" +
+
+          "Your destination has been received. " +
+
+          "Use the travel search below to " +
+
+          "continue finding flights and hotels.";
+
 
       } finally {
+
         generateButton.disabled = false;
-        generateButton.textContent = "Generate Journey →";
+
+        generateButton.textContent =
+          "Generate Journey →";
+
       }
+
     }
+
   </script>
 
 </body>
