@@ -46,6 +46,7 @@
         </header>
 
         <main>
+            <!-- AI GENERATOR COMPONENT -->
             <section style="text-align: center; margin-bottom: 20px;">
                 <h2 style="font-size: 24px; margin-bottom: 10px;">Let AI Build Your Journey</h2>
                 <p style="color: #a3b18a; font-size: 14px; margin-top: 5px;">Enter your target destination to generate travel details</p>
@@ -83,24 +84,25 @@
 
             if (input.trim() === "") return;
 
-            // 1. Add User Message
+            // 1. Add User Message to Chat
             var userDiv = document.createElement("div");
             userDiv.className = "message user-msg";
             userDiv.innerHTML = "<strong>You:</strong> " + input;
             chatBox.appendChild(userDiv);
             chatBox.scrollTop = chatBox.scrollHeight;
 
-            // Clear Input
+            // Clear Input Area
             document.getElementById("user-input").value = "";
 
-            // Show Typing Placeholder
+            // Show Thinking Placeholder
             var typingDiv = document.createElement("div");
             typingDiv.className = "message ai-msg";
             typingDiv.innerHTML = "<strong>ATLAASSTAYS AI:</strong> Thinking...";
             chatBox.appendChild(typingDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
 
             try {
-                // Connects to Gemini Free AI API via a safe serverless gateway
+                // Connecting directly to Gemini Free API
                 const response = await fetch("https://googleapis.com" + "D_G8P" + "4w4C" + "Z9j3" + "i3Z" + "qXyS" + "8pM" + "sY9" + "w18", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -114,12 +116,12 @@
                 });
 
                 const data = await response.json();
-                let aiResponse = data.candidates[0].content.parts[0].text;
+                let aiResponse = data.candidates.content.parts.text;
                 
-                // Format text lines to look nice in chat
+                // Format response lines
                 aiResponse = aiResponse.replace(/\n/g, "<br>");
 
-                // Remove typing placeholder and insert actual AI response
+                // Remove typing placeholder and display AI answer
                 chatBox.removeChild(typingDiv);
                 var aiDiv = document.createElement("div");
                 aiDiv.className = "message ai-msg";
@@ -128,8 +130,10 @@
                 
                 chatBox.scrollTop = chatBox.scrollHeight;
 
-                // 3. Display Travelpayouts Widget Container for Booking
-                widgetBox.style.display = "block";
+                // 3. Trigger and show Travelpayouts Widget Container
+                if (widgetBox) {
+                    widgetBox.style.display = "block";
+                }
 
             } catch (error) {
                 if (chatBox.contains(typingDiv)) {
@@ -139,7 +143,9 @@
                 errorDiv.className = "message ai-msg";
                 errorDiv.innerHTML = "<strong>ATLAASSTAYS AI:</strong> Sorry, I encountered an issue. Please look below to search your flights and hotels directly.";
                 chatBox.appendChild(errorDiv);
-                widgetBox.style.display = "block";
+                if (widgetBox) {
+                    widgetBox.style.display = "block";
+                }
             }
         }
     </script>
